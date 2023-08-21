@@ -1,5 +1,5 @@
 provider "aws" {
-  region  = var.aws_region
+  region = var.aws_region
   default_tags {
     tags = {
       Name = "aws-auth-and-irsa"
@@ -13,7 +13,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.12"
+      version = "~> 5.1.0"
     }
   }
 }
