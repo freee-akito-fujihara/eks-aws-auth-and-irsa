@@ -14,6 +14,9 @@ module "eks" {
     main = {
       desired_size   = 1
       instance_types = ["t2.micro"]
+      iam_role_additional_policies = {
+        s3_access_role = aws_iam_policy.node-role-access.arn
+      }
     }
   }
 
