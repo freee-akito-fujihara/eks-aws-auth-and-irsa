@@ -6,6 +6,13 @@ data "aws_iam_policy_document" "node-role-access" {
     ]
     resources = ["${aws_s3_bucket.node-role-access.arn}"]
   }
+	statement {
+    effect = "Allow"
+    actions = [
+      "s3:ListBucket",
+    ]
+    resources = ["${aws_s3_bucket.node-role-access.arn}"]
+	}
 }
 
 resource "aws_iam_policy" "node-role-access" {
@@ -21,6 +28,13 @@ data "aws_iam_policy_document" "irsa-access" {
     ]
     resources = ["${aws_s3_bucket.irsa-access.arn}"]
   }
+	statement {
+    effect = "Allow"
+    actions = [
+      "s3:ListBucket",
+    ]
+    resources = ["${aws_s3_bucket.irsa-access.arn}"]
+	}
 }
 
 resource "aws_iam_policy" "irsa-access" {
